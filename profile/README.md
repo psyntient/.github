@@ -74,4 +74,40 @@ why. Read that before reading the code.
 
 ---
 
+## How these repositories are documented
+
+Three layers, three fixed filenames. Whatever you are — person or agent — you can
+get from any single repository to the whole picture in one hop.
+
+| layer | where | what it answers |
+|---|---|---|
+| **overview** | this page (`profile/README.md` in `psyntient/.github`) | what Psyntient builds, which repository holds what |
+| **two maps** | `README.md` in [psyntient-droplet](https://github.com/psyntient/psyntient-droplet) and [psyntient-cloud](https://github.com/psyntient/psyntient-cloud) | how the Archive host fits together; how a Cloud tenant works |
+| **per repository** | `README.md`, `CLAUDE.md`, `AGENTS.md` | see below |
+
+In every repository:
+
+- **`README.md`** — what this repository is for. Starts with a *Where you are*
+  block linking back to this page and to both maps, so nothing is a dead end.
+- **`CLAUDE.md`** — **hard rules for working in that repository.** Not
+  orientation: the decisions and traps that have each been learned the expensive
+  way, with the reason attached. Read it before changing anything.
+- **`AGENTS.md`** — **an agent's own persona**, and nothing else. The Librarian's
+  instructions, the Architect's workspace rules, Cortex's identity. These are
+  loaded at runtime as *who that agent is*, so developer guidance must never be
+  written under this name — in this organisation it would be read as an
+  instruction to an agent.
+
+That last distinction is the one to hold on to, because `AGENTS.md` means
+something different here than it does in most repositories.
+
+### Why the overview is a page and not a file you can clone
+
+GitHub renders `profile/README.md` from the `.github` repository as the
+organisation's front page. Nothing that clones a single repository will ever see
+it, which is why every repository's own docs link back here by URL rather than
+relying on anyone arriving at the front door first.
+
+---
+
 *The Archive grows one consented observation at a time.*
